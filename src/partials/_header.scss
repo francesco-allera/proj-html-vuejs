@@ -1,0 +1,95 @@
+header {
+    $height: 80px;
+    height: $height;
+    background: $c-bg-app;
+    width: 100%;
+    text-transform: capitalize;
+
+    &.hide,
+    &.show {
+        color: $c-font-7;
+        position: fixed;
+        left: 0;
+        z-index: 100;
+        transition: top .8s ease-in-out;
+        transition-delay: .15s;
+        box-shadow: 0 8px 20px 0 rgb(0 0 0 / 10%);
+
+        .socials {
+            color: $c-font-7;
+        }
+    }
+
+    &.hide {
+        top: -$height;
+    }
+
+    &.show {
+        top: 0;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    .logo-frame {
+        width: 158px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .menu {
+        @include flex-center;
+
+        &-item {
+            line-height: $height;
+            padding: 0 16px;
+
+            .drop {
+                line-height: $line-height;
+                display: inline-block;
+                position: relative;
+                padding-right: 15px;
+
+                &::before {
+                    font-family: "Font Awesome 6 Free";
+                    font-size: 8px;
+                    font-weight: 600;
+                    content: "\f078";
+                    position: absolute;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    right: 0;
+                }
+
+                &::after {
+                    @include cubic;
+                    transition-property: width;
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    height: 0;
+                    width: 0;
+                    border-bottom: 1px solid;
+                }
+            }
+
+            &:hover {
+                .drop::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .socials {
+        font-size: $font-lg;
+        color: $c-font-3;
+        display: flex;
+        justify-content: flex-end;
+        gap: 24px;
+    }
+}

@@ -1,0 +1,143 @@
+.container {
+    $sz: 15px;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 $sz;
+
+    &.custom {
+        width: 1200px;
+    }
+
+    .row {
+        min-width: 100%;
+        margin: 0 (-$sz);
+        display: flex;
+        flex-wrap: wrap;
+
+        .col {
+            padding: 0 $sz;
+            flex-grow: 1;
+        }
+
+        @for $i from 1 to 13 {
+            .col-#{$i} {
+                width: calc(100% / 12 * $i);
+                padding: 0 $sz;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
+
+.font- {
+    &lt {
+        font-family: $gilroy-lt;
+    }
+    &bd {
+        font-family: $gilroy-bd;
+    }
+
+    &xs {
+        font-size: $font-xs;
+    }
+    &sm {
+        font-size: $font-sm;
+    }
+    &lg {
+        font-size: $font-lg;
+    }
+    &xl {
+        font-size: $font-xl;
+    }
+    &xxl {
+        font-size: $font-xxl;
+    }
+}
+
+.color- {
+    &pri {
+        color: $c-primary;
+    }
+    &sec {
+        color: $c-secondary;
+    }
+    &ter {
+        color: $c-tertiary;
+    }
+    &neu {
+        color: $c-neutral;
+    }
+}
+
+.text {
+    &-center {
+        text-align: center;
+    }
+}
+
+.titles {
+    max-width: 610px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rossela {
+    font-family: $rossela;
+    color: $c-secondary;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.btn {
+    @include flex-center;
+    @include cubic;
+    font-family: $gilroy-bd;
+    font-size: $font-xs;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &-small {
+        width: 132px;
+        height: 32px;
+    }
+    &-big {
+        width: 200px;
+        height: 52px;
+    }
+
+    &-primary {
+        background-color: $c-primary;
+        color: $c-neutral;
+
+        &:hover {
+            background-color: $c-secondary;
+            color: $c-neutral;
+        }
+    }
+
+    &-colored {
+        color: $c-primary;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            @include cubic;
+            background-color: $c-primary;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            opacity: .1;
+        }
+
+        &:hover {
+            color: $c-neutral;
+
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}

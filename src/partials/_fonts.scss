@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Gilroy Light";
+    src: url("./gilroy/gilroy-light.otf") format("opentype");
+    src: url("./gilroy/gilroy-light-webfont.woff") format("woff"),
+        url("./gilroy/gilroy-light-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy Bold";
+    src: url("./gilroy/gilroy-bold.otf") format("opentype");
+    src: url("./gilroy/gilroy-bold-webfont.woff") format("woff"),
+        url("./gilroy/gilroy-bold-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rossela";
+    src: url("./rossela/rossela.otf") format("opentype");
+    src: url("./rossela/rossela.ttf") format("truetype"),
+        url("./rossela/rossela.eot"),
+        url("./rossela/rossela.woff") format("woff"),
+        url("./rossela/rossela.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Family */
+$gilroy-lt: "Gilroy Light";
+$gilroy-bd: "Gilroy Bold";
+$rossela: "Rossela";
+
+/* Size */
+$font-xs: 14px;
+$font-sm: 15px;
+$font-md: 16px;
+$font-lg: 18px;
+$font-xl: 20px;
+$font-xxl: 24px;
+
+/* Line-Height */
+$line-height: 1.35;

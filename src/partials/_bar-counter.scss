@@ -1,0 +1,34 @@
+.bar-counter {
+    @include flex-center;
+    background: $c-bg-bar-counter;
+    height: 50px;
+
+    &-text {
+        color: $c-font-4;
+        font-size: $font-xs;
+        margin-right: 30px;
+    }
+
+    &-clock {
+        font-family: $gilroy-bd;
+        font-size: $font-lg;
+        color: $c-tertiary;
+        margin-right: 45px;
+
+        i {
+            margin-right: 10px;
+        }
+
+        span {
+            padding: 0 6px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+}
